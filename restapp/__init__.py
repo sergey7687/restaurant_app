@@ -7,7 +7,7 @@ app = Flask('__name__', template_folder='restapp/templates', static_folder='rest
 # config mysql
 app.config['MYSQL HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Lindab123'
+app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'restaurant_db'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
