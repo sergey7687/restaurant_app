@@ -1,0 +1,7 @@
+/venv
+/.idea
+/restapp/.idea
+/restapp/__pycache__
+/restapp/jhg.py
+/restapp/mu.py
+/restapp/static

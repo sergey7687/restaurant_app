@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <h3> Карточка гостя: {{guest.guest_f_name}} {{guest.guest_l_name}}</h3>
+    <p>дата регистрации: {{guest.create_date}}</p>
+      <h5>Личная информация</h5>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{guest.guest_f_name}}</li>
+        <li class="list-group-item">{{guest.guest_l_name}}</li>
+        <li class="list-group-item">{{guest.guest_phone}}</li>
+        <li class="list-group-item">{{guest.guest_email}}</li>
+      </ul>
+      <br>
+      <h5>Заметка о госте</h5>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{guest.guest_note}}</li>
+      </ul>
+
+{% endblock %}

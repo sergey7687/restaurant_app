@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h3>Редактировать данные сотрудника</h3>
+<div class="content-section">
+  <form action="" method="post">
+      <div class="form-group">
+        {{form.emp_first_name.label }}
+        {{form.emp_first_name (class ="form-control")}}
+      </div>
+      <div class="form-group">
+        {{form.emp_last_name.label }}
+        {{form.emp_last_name (class ="form-control")}}
+      </div>
+      <div class="form-group">
+        {{form.position.label }}
+        {{form.position (class ="form-control")}}
+      </div>
+      <div class="form-group">
+
+        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Подразделение">
+        <datalist id="datalistOptions">
+          <option value="Кухня">
+          <option value="Бар">
+          <option value="Зал">
+          <option value="Склад">
+        </datalist>
+      </div>
+      <div class="form-group">
+        {{form.emp_phone.label }}
+        {{form.emp_phone (class ="form-control")}}
+      </div>
+    <button type="submit" class="btn btn-primary mb-2">Редактировать</button>
+  </form>
+</div>
+{% endblock %}

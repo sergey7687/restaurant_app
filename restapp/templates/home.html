@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <div class="jumbotron text-center">
+        <h2>Добро пожаловать в систему управления рестораном</h2>
+        {% if session.logged_in == NULL %}
+            <p class="lead">Начать работу</p>
+            <a href="/register" class="btn btn-primary btn-lg">Зарегистрироваться</a>
+            <a href="/login" class="btn btn-success btn-lg">Войти</a>
+        {% endif %}
+    </div>
+{% endblock %}

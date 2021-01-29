@@ -1,0 +1,105 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <h3>Регистрация</h3>
+    <form method="POST" action="">
+      <div class="form-group">
+        {{form.user_f_name.label }}
+        {% if form.user_f_name.errors %}
+          {{form.user_f_name(class='form-control is-invalid')}}
+          <div class="invalid-feedback">
+               {% for error in form.user_f_name.errors %}
+                <span>{{error}}</span>
+                {% endfor %}
+          </div>
+        {% else %}
+          {{ form.user_f_name(class="form-control form-control-lg")}}
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {{form.user_l_name.label }}
+        {% if form.user_l_name.errors %}
+          {{form.user_l_name(class='form-control is-invalid')}}
+          <div class="invalid-feedback">
+               {% for error in form.user_l_name.errors %}
+                <span>{{error}}</span>
+                {% endfor %}
+          </div>
+        {% else %}
+          {{ form.user_l_name(class="form-control form-control-lg")}}
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {{form.username.label }}
+        {% if form.username.errors %}
+          {{form.username(class='form-control is-invalid')}}
+          <div class="invalid-feedback">
+               {% for error in form.username.errors %}
+                <span>{{error}}</span>
+                {% endfor %}
+          </div>
+        {% else %}
+          {{ form.username(class="form-control form-control-lg")}}
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {{form.user_phone.label }}
+        {% if form.user_phone.errors %}
+          {{form.user_phone(class='form-control is-invalid')}}
+          <div class="invalid-feedback">
+               {% for error in form.user_phone.errors %}
+                <span>{{error}}</span>
+                {% endfor %}
+          </div>
+        {% else %}
+          {{ form.user_phone(class="form-control form-control-lg")}}
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {{form.user_email.label }}
+        {% if form.user_email.errors %}
+          {{form.user_email(class='form-control is-invalid')}}
+          <div class="invalid-feedback">
+               {% for error in form.user_email.errors %}
+                <span>{{error}}</span>
+                {% endfor %}
+          </div>
+        {% else %}
+          {{ form.user_email(class="form-control form-control-lg")}}
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {{form.password.label }}
+        {% if form.password.errors %}
+          {{form.password(class='form-control is-invalid')}}
+          <div class="invalid-feedback">
+               {% for error in form.password.errors %}
+                <span>{{error}}</span>
+                {% endfor %}
+          </div>
+        {% else %}
+          {{ form.password(class="form-control form-control-lg")}}
+        {% endif %}
+      </div>
+       <div class="form-group">
+        {{form.confirm.label }}
+        {% if form.confirm.errors %}
+          {{form.confirm(class='form-control is-invalid')}}
+          <div class="invalid-feedback">
+               {% for error in form.confirm.errors %}
+                <span>{{error}}</span>
+                {% endfor %}
+          </div>
+        {% else %}
+          {{ form.confirm(class="form-control form-control-lg")}}
+        {% endif %}
+      </div>
+      <div class="row justify-content-between">
+        <div class="col-4">
+          <a class="btn btn-secondary mb-3" href="/login">Вход</a>
+        </div>
+        <div class="col-4">
+         <button type="submit" class="btn btn-primary mb-3">Зарегистрироваться</button>
+        </div>
+      </div>
+    </form>
+{% endblock %}

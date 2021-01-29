@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% block body %}
+  <h3>Заказы</h3>
+<div class="row align-items-center">
+  <div class="col-4 col-sm-4">
+    <a href="{{url_for('items')}}" class="btn btn-secondary btn-sm pullright">Сделать заказ</a>
+  </div>
+</div>
+    <hr>
+    <form class="d-flex">
+      <input class="form-control mr-sm-2" type="search" placeholder=" " aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+    </form>
+    <br>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Номер заказа</th>
+          <th>Имя Гостя</th>
+          <th>Адрес заказа</th>
+          <th>Заказ</th>
+          <th>Исполнитель</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for order in orders %}
+        <tr>
+          <td>{{order.book_id}}</td>
+          <td>{{order.guest_f_name}}</td>
+          <td>{{order.guest_address}}</td>
+          <td>{{order.menu_pos}}</td>
+          <td>{{order.user_f_name}}</td>
+          <td>{{order.user_l_name}}</td>
+          <td>
+            <form action="{{url_for('delete_order', id=order.book_id) }}" method="post">
+              <input type="hidden" name="method" value="DELETE">
+              <input type="submit" value="Удалить заказ" class="btn btn-danger">
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+{% endblock %}

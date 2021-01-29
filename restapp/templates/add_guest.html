@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h3>Добавить данные гостя</h3>
+<div class="content-section">
+  <form action="" method="post">
+      <div class="form-group">
+        {{form.guest_f_name.label }}
+        {{form.guest_f_name (class ="form-control")}}
+      </div>
+      <div class="form-group">
+        {{form.guest_l_name.label }}
+        {{form.guest_l_name (class ="form-control")}}
+      </div>
+      <div class="form-group">
+        {{form.guest_phone.label }}
+        {{form.guest_phone (class ="form-control")}}
+      </div>
+      <div class="form-group">
+        {{form.guest_email.label }}
+        {{form.guest_email (class ="form-control")}}
+      </div>
+    <div class="form-group">
+        {{form.guest_address.label }}
+        {{form.guest_address (class ="form-control")}}
+      </div>
+      <div class="form-group">
+        {{form.guest_note.label }}
+        {{form.guest_note (class ="form-control")}}
+      </div>
+    <button type="submit" class="btn btn-primary mb-2">Добавить</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <h3>Гости</h3>
+    <a class="btn btn-success" href="/add_guest">Добавить гостя</a>
+    <hr>
+    <form class="d-flex">
+      <input class="form-control mr-sm-2" type="search" placeholder=" " aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+    </form>
+    <br>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>Имя</th>
+          <th>Фамилия</th>
+          <th>Телефон</th>
+          <th>Почта</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for guest in guests %}
+        <tr>
+          <td>{{guest.guest_id}}</td>
+          <td>{{guest.guest_f_name}}</td>
+          <td>{{guest.guest_l_name}}</td>
+          <td>{{guest.guest_phone}}</td>
+          <td>{{guest.guest_email}}</td>
+          <td><a href="guest_card/{{guest.guest_id}}" class="btn btn-secondary btn-sm pullright">Карточка гостя</a></td>
+          <td><a href="edit_guest/{{guest.guest_id}}" class="btn btn-secondary btn-sm pullright">Редактировать</a></td>
+<!--           <td><a href="{{url_for('edit_guest', id=guest.guest_id) }}"> Редактировать </a></td>-->
+          <td>
+            <form action="{{url_for('delete_guest', id=guest.guest_id) }}" method="post">
+              <input type="hidden" name="method" value="DELETE">
+              <input type="submit" value="Удалить" class="btn btn-danger btn-sm">
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+{% endblock %}
+
+
